@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>rgn-wl1036-template</artifactId>
+        <groupId>ragna.wl1036</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>ragna.wl1036</groupId>
+    <artifactId>rgn-wl1036-template-ear</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>ear</packaging>
+
+    <name>rgn-wl1036-template-ear</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>ragna.wl1036</groupId>
+            <artifactId>rgn-wl1036-template-ejb</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>ragna.wl1036</groupId>
+            <artifactId>rgn-wl1036-template-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.6</version>
+                
+                <configuration>
+                    <version>5</version>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+<!--
+                    <ejbModule>
+                        <groupId>ragna.wl1036</groupId>
+                        <artifactId>rgn-wl1036-template-ejb</artifactId>
+                        <bundleFileName>rgn-wl1036-template-ejb</bundleFileName>
+                    </ejbModule>
+                    <webModule>
+                        <groupId>ragna.wl1036</groupId>
+                        <artifactId>rgn-wl1036-template-web</artifactId>
+                        <bundleFileName>rgn-wl1036-template-web</bundleFileName>
+                        <contextRoot>/rgn-wl1036-template-web</contextRoot>
+                    </webModule>
+    -->                
+
+
+                    <!--
+
+                    <archive>
+                        <index>true</index>
+                        
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                    -->
+                </configuration>
+                
+            </plugin>
+        </plugins>
+        
+    </build>
+</project>
